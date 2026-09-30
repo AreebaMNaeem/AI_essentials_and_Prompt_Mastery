@@ -1,9 +1,9 @@
-# 🤖 Week 3: Advanced Prompting Techniques
+# Advanced Prompting Techniques:
 
-## 🔶 Few-Shot Prompting
+## 1️⃣ Few-Shot Prompting:
 **Definition:** Few-shot prompting means giving the AI a couple of examples of exactly the input → output pattern you want, before asking it to do the real task. Instead of guessing your format, it copies the pattern.
 
-### ❌ Zero-shot (no examples)
+### 2️⃣ Zero-shot (no examples):
 ```
 Prompt: "Turn these notes into flashcards: 
 Mitochondria = powerhouse of the cell. Produces ATP through 
@@ -43,7 +43,7 @@ A: The powerhouse of the cell, which produces ATP through respiration.
 
 ---
 
-## 🔶 Chain-of-Thought Prompting
+## 3️⃣ Chain-of-Thought Prompting
 **Definition:** Asking the AI to reason step by step *before* giving a final answer. This matters most for math, logic, and multi-step problems, where jumping straight to an answer increases the chance of a mistake.
 
 ### ❌ Without chain-of-thought
@@ -77,117 +77,106 @@ Final answer: $32.39 per person
 
 ---
 
-## 🔶 Role-Based / Persona Prompting
+## 4️⃣ Role-Based / Persona Prompting
 **Definition:** Telling the AI to act as a specific character or professional. This shifts its tone, vocabulary, and priorities — same question, very different answer.
 
 ➡️ **Example — same question, two personas:**
 
 ```
-Prompt A: "Act as a strict IELTS examiner. Grade this sentence: 
+Prompt A: "Act as a strict English teacher grading a test. 
+Point out any mistake in this sentence: 
 'I have went to the store yesterday.'"
 
-Output A: "Grammatical error: incorrect past participle usage. 
-Should be 'I went to the store yesterday.' This would cost you 
-marks in the Grammatical Range and Accuracy band."
+Output A: "This sentence has a grammar mistake. The correct form 
+is 'went,' not 'have went.' Correct version: 
+'I went to the store yesterday.'"
 ```
 
 ```
-Prompt B: "Act as a friendly conversation partner helping a 
-beginner. Respond to: 'I have went to the store yesterday.'"
+Prompt B: "Act as a friendly friend texting back casually. 
+Respond to: 'I have went to the store yesterday.'"
 
-Output B: "Nice! Just a small tip — we usually say 'I went' 
-instead of 'I have went.' Where'd you go shopping?"
+Output B: "Nice, what'd you get? (small tip — it's usually 
+'I went,' not 'I have went' 😄)"
 ```
 
-🔻 Same input sentence, same task, completely different tone and depth — because the *role* changes what the AI prioritizes.
+🔻 Same sentence, same mistake — but Prompt A's persona makes the AI focus purely on correctness and explanation, while Prompt B's persona makes it casual and only mentions the fix in passing. The **role** you assign decides what the AI pays attention to and how deep it goes, even when the actual question hasn't changed at all.
 
 **Template:**
 ```
-Act as a [specific role — strict examiner / patient tutor / 
+Act as a [specific role — strict teacher / patient tutor / 
 skeptical investor / senior developer]. [Task]. 
 Respond in the tone and priorities that role would actually use.
 ```
 
 ---
 
-## 🔶 Combining All Three — Real Multi-Step Problems
+## 5️⃣ Combining All Three — Real Multi-Step Problems
 
 The real power shows up when you stack these techniques together on a problem that actually has multiple moving parts.
 
-### 🎯 Hands-on Problem: The 10-Day Exam Conflict
+### 🎯 Hands-on Problem: The 60-Day Skill Roadmap
 
-*Scenario: You have 3 exams in 10 days — Biology (hardest, worth 40% of your grade), Chemistry (medium difficulty), and History (easiest). You have 3 study hours per day.*
+*Scenario: You want to go from "casually uses ChatGPT" to "confidently AI-skilled enough to freelance or get hired" in 60 days, studying just 1 hour a day. You need to figure out what to learn first, what to skip for now, and in what order it actually builds on itself.*
 
 ➡️ **Weak prompt (what most students write):**
 ```
-"Make me a study schedule for my 3 exams."
+"Give me a roadmap to learn AI in 60 days."
 ```
-Generic, doesn't account for difficulty, weight, or your actual time.
+Generic — gives you a list of topics with no real order, no sense of what depends on what, and no account of your 1-hour-a-day limit.
 
-➡️ **Advanced prompt (persona + few-shot + chain-of-thought stacked):**
+➡️ **Stacked prompt (persona + few-shot + chain-of-thought):**
 ```
-Act as an academic strategist who plans schedules based on 
-subject difficulty and grade weight. [persona]
+Act as a mentor who has helped people go from beginner to 
+AI-skilled enough to freelance or get hired, in a fixed timeframe. [persona]
 
-Here's an example of how you should structure a day:
-Day 1: Biology (1.5 hrs — hardest, highest weight), 
-       Chemistry (1 hr), History (0.5 hr — review only) [few-shot]
+Here's the format I want each phase in:
+Phase: Foundations (Days 1-10)
+Focus: Prompt engineering basics
+Why this order: Everything else depends on writing good prompts, 
+so it comes first.
+Daily task: 1 hour — practice writing structured prompts. [few-shot]
 
-Now, before creating the schedule, first reason through: 
-how many total study hours are available, how they should be 
-split across the 3 subjects based on difficulty and weight, and 
-which subject needs the most repetition. Show this reasoning, 
-then give me the final 10-day schedule as a table. [chain-of-thought]
+Before building the roadmap, first reason through: what skill 
+actually needs to come first because everything else depends on 
+it, what can wait until later, and what's realistic in 1 hour/day 
+over 60 days. Then give me the full roadmap broken into phases. [chain-of-thought]
 
-My exams: Biology (hardest, 40% weight) — day 10. Chemistry 
-(medium) — day 7. History (easiest) — day 5. I have 3 hours/day.
+My situation: I can use ChatGPT casually but don't know prompt 
+engineering, data/spreadsheet skills, or how to build anything 
+with AI. Goal: be freelance/job-ready in 60 days. 1 hour/day.
 ```
 **Output:**
 ```
 Reasoning:
-- Total available hours: 10 days × 3 hrs = 30 hours
-- Biology needs the most time (hardest + highest weight) → ~45%
-- Chemistry is medium → ~35%
-- History is easiest and due soonest, so front-load it, then 
-  drop to light review → ~20%
+- Prompt engineering has to come first — spreadsheet work, 
+  building tools, and a portfolio all depend on being able to 
+  prompt well. Skipping this makes every later phase harder.
+- Building a portfolio has to come LAST, not early — you need 
+  something worth showing before you can show it.
+- 1 hour/day over 60 days = ~60 hours total. That's enough for 
+  4 focused phases, not 10 scattered ones.
 
-Final Schedule:
-| Day | Biology | Chemistry | History |
-|-----|---------|-----------|---------|
-| 1   | 1.0 hr  | 1.0 hr    | 1.0 hr  |
-| 2   | 1.0 hr  | 1.0 hr    | 1.0 hr  |
-| 3   | 1.0 hr  | 1.0 hr    | 1.0 hr  |
-| 4   | 1.5 hr  | 1.0 hr    | 0.5 hr  |
-| 5   | 1.5 hr  | 1.0 hr    | 0.5 hr (exam today) |
-| 6   | 1.5 hr  | 1.5 hr    | —       |
-| 7   | 1.0 hr  | 2.0 hr (exam today) | — |
-| 8   | 2.0 hr  | —         | —       |
-| 9   | 2.5 hr  | —         | —       |
-| 10  | 1.0 hr (light review, exam today) | — | — |
+Final Roadmap:
+| Phase | Days | Focus | Daily task |
+|---|---|---|---|
+| 1. Foundations | 1-15 | Prompt engineering (structure, few-shot, chain-of-thought) | Practice writing + refining prompts |
+| 2. Applied skill | 16-30 | AI + spreadsheets/data | Analyze one real dataset per week |
+| 3. Building | 31-45 | Build small tools with AI (a webpage, a mini automation) | One small project every 5 days |
+| 4. Portfolio | 46-60 | Package everything into a portfolio + resume | Polish 2-3 best projects, write it up |
 ```
-🔻 Notice what made this work: the **persona** set the priorities, the **few-shot example** locked in the format, and **chain-of-thought** forced it to reason about hours before committing to a schedule — three techniques, one clean answer.
 
-### 🎯 Bonus Hands-on: Build Something Real
-Reuse the landing page idea from earlier — but this time, have students explicitly use all three techniques:
-- **Persona:** "Act as a senior web designer who avoids generic templates."
-- **Few-shot:** Give the AI a short example of a headline + subheading pair in the tone they want, before asking for the full page.
-- **Chain-of-thought:** "Before writing code, first reason through: who is this product for, what's the one thing the hero section must communicate, and what should the visual mood be. Then build the page."
-
-Same output type as before (a working landing page) — but the *process* now uses everything from this week instead of one-shot prompting.
+🔻 The chain-of-thought step is doing the real work here — it's *why* the roadmap isn't just a flat list of topics, but an order that actually respects what depends on what.
 
 ---
 
-## 🔶 Bringing It All Together
+## 6️⃣ Which Technique, When?
 
-```text
-Few-shot   → show examples so the AI copies your format, not guesses it
-     ↓
-Chain-of-thought → make it reason step by step before answering, catches errors
-     ↓
-Persona    → assign a role so tone and priorities match the task
-     ↓
-Stack all three on a real multi-step problem
-     ↓
-The result: fewer wrong answers, consistent format, and the right tone — 
-on the first try, not the fifth
-```
+| Technique | What it does | Best used when | Example use case |
+|---|---|---|---|
+| **Few-shot** | Shows the AI examples so it copies your exact format | You need a consistent, repeatable output format | Turning notes into flashcards, generating resume bullets in one style |
+| **Chain-of-thought** | Forces the AI to reason step by step before answering | The task involves math, logic, or multiple dependent steps | Splitting a bill, building a budget, planning a schedule |
+| **Persona** | Assigns a role that shapes tone, focus, and depth | You need a specific tone or expertise angle, not just correctness | Grading writing like a strict teacher vs. replying like a friend |
+| **All three stacked** | Combines format + reasoning + tone in one prompt | The task is genuinely complex and has multiple moving parts | Building a full skill roadmap, diagnosing and rewriting a resume |
+
+🔻 Quick rule of thumb: if the output's *shape* keeps changing → add few-shot. If the *answer* keeps being wrong → add chain-of-thought. If the *tone* feels off → add a persona. If it's messy in more than one of those ways, stack them.
