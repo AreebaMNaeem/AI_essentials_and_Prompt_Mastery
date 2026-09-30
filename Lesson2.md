@@ -1,4 +1,4 @@
-# 🤖 Week 2: Prompt Engineering Fundamentals
+# Prompt Engineering Fundamentals:
 
 ## 🔶 Anatomy of a Good Prompt
 A good prompt usually has 5 building blocks. Miss one, and the AI has to guess — and guessing is where bad output comes from.
