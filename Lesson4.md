@@ -1,4 +1,4 @@
-# 🔎 Week 5: AI for Research and Fact-Checking
+# 🔎 AI for Research and Fact-Checking
 
 > We solve **one real research question from start to finish**, using each tool at the point where the research needs it.
 
