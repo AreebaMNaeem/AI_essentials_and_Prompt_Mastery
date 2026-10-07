@@ -49,11 +49,23 @@ Use the same email as your GitHub account.
 
 ## 🔄 The Git Workflow
 
-Your files move through four places:
+`git init` starts the tracking. After that, your files move through four places:
 
 ```
- Working Directory   ──git add──▶   Staging Area   ──git commit──▶   Local Repository   ──git push──▶   GitHub
- (your files)                       (ready to save)                  (saved history)                    (online copy)
+        git init
+   (start tracking the folder)
+              │
+              ▼
+   Working Directory     (your files)
+              │  git add
+              ▼
+   Staging Area          (ready to save)
+              │  git commit  →  a commit ID is created here
+              ▼
+   Local Repository      (saved history)
+              │  git push
+              ▼
+   GitHub                (online copy)
 ```
 
 | Place | What it means |
@@ -106,6 +118,12 @@ Run `git status` again. The file is now **staged** (ready to be committed).
 git commit -m "Add README file"
 ```
 A **commit** is a saved snapshot of your staged changes, with a message describing what you did.
+
+Git also creates a unique **commit ID** at this moment. You will see it in the output:
+```
+[main (root-commit) a1b2c3d] Add README file
+```
+Here `a1b2c3d` is the commit ID (yours will look different). You can see all your commit IDs later with `git log --oneline`.
 
 **Good commit messages are short and clear:**
 - ✅ `Add login page`
