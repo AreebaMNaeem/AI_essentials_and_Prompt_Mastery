@@ -1,10 +1,10 @@
-# Week 6: Introduction to AI Image Generation
+# 🎨 Introduction to AI Image Generation
 
 > We start with how image generators work (GANs, then diffusion), then learn the three main tools, then generate our first images.
 
 ---
 
-# This Week at a Glance
+### This Week at a Glance
 
 - How text-to-image models work (diffusion explained simply)
 - Introduction to MidJourney: interface and basic prompting
